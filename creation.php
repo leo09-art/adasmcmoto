@@ -2,8 +2,8 @@
 include 'pdo.php';
 $data = $bdd->query('SELECT * from user');
 $users = $data->fetchAll();
-echo 'Connexion reussi';
-var_dump($users);
+// echo 'Connexion reussi';
+// var_dump($users);
 // print_r($users);
 ?>
 <?php
@@ -40,7 +40,7 @@ if (isset($_POST['ok'])) {
             $url = "connexion.php";
 
             echo "<p>Veuillez patienter, vous serez redirigé dans $delay secondes...</p>";
-            // echo "<script>
+            //<script>
             //     setTimeout(function(){
             //     window.location.href = '$url';
             //     }, " . ($delay * 1000) . ");
@@ -83,6 +83,7 @@ if (isset($_POST['ok'])) {
             text-align: center;
             justify-content: center;
             gap: 10px;
+            background-color: gray;
         }
 
         .container .header {
@@ -121,13 +122,14 @@ if (isset($_POST['ok'])) {
             /* background: linear-gradient(to right,blue,yellow); */
             top: 20px;
             font-size: 20px;
-            width: 100px;
+            width: 150px;
             height: 70px;
             border-radius: 20px;
             /* column-gap: 20px; */
             background: linear-gradient(to left, orange, rosybrown);
             transition: 2s;
-            animation-duration: 2s;
+            color: wheat;
+            margin: 50px;
 
         }
 
@@ -136,6 +138,7 @@ if (isset($_POST['ok'])) {
             background: antiquewhite;
             cursor: pointer;
             top: 50px;
+            font-size: 30px;
 
         }
 
@@ -214,6 +217,7 @@ if (isset($_POST['ok'])) {
             justify-items: center;
 
         }
+
     </style>
 
 
@@ -262,17 +266,16 @@ if (isset($_POST['ok'])) {
                 </div>
             </div>
 
-            <div class="footer">
-                <p>Se connecter <a href="connexion.php">Connecter vous !</a></p>
-                <!--<div class="ajout">
-                    
-                </div> -->
+            <div class="footer" style="color: purple;">
+                 <a href="connexion.php">J'ai déja un compte !</a>
             </div>
         </div>
 
     </form>
 
-
+<script>
+   
+</script>
 </body>
 
 </html>

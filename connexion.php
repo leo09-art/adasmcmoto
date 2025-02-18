@@ -19,14 +19,14 @@ if (isset($_POST['ok'])) {
             $req->execute();
             $cpt = $req->rowCount();
             if($cpt==1){
-                $message="vous avez été trouver";
+                $message="Vous avez été trouver";
                 header('location: tailwindcss/index.php');
             }else{
-                $message=  "mot de passe erroné";
+                $message=  "inscrivez vous d'abord pour pouvoir vous connecter";
             }
  
     }else{
-        $message="veuillez remplir tous les champs";
+        $message="Veuillez remplir tous les champs";
     }
 }
 ?>
@@ -41,7 +41,7 @@ if (isset($_POST['ok'])) {
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Agu+Display&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Jersey+15&family=Noto+Sans+JP:wght@100..900&family=Playwrite+IN:wght@100..400&family=Playwrite+PT+Guides&family=Playwrite+TZ+Guides&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Audiowide&display=swap');
         form {
             background: linear-gradient(to top, burlywood, #81bfbc);
             background: url(background.jpg);
@@ -60,10 +60,11 @@ if (isset($_POST['ok'])) {
         .container {
             display: grid;
             grid-template-columns: auto auto;
-            grid-template-rows: auto auto auto;
+            grid-template-rows: auto auto auto auto;
             text-align: center;
             grid-template-areas:
                 "header header"
+                "ajout ajout"
                 "body body"
                 "footer footer";
         }
@@ -175,6 +176,12 @@ if (isset($_POST['ok'])) {
         .container .body .footer #p2 {
             grid-area: p2;
         }
+        .container #ajout{
+            grid-area: ajout;
+            font-family: "Agdasima", serif;
+            font-size: 50px;
+            font-weight: 400px;
+        }
     </style>
 </head>
 
@@ -182,7 +189,7 @@ if (isset($_POST['ok'])) {
 
     <form action="connexion.php" method="POST">
         <div class="container">
-            <div style="color:red;">
+            <div id="ajout"  style="color:red;">
                 <?php 
                     if(isset($message))
                         echo $message."<br/>";
